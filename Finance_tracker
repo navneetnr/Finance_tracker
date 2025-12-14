@@ -3198,3 +3198,2156 @@
             background: rgba(248, 150, 30, 0.1);
             color: #f8961e;
         }
+
+        /* ===== COLOR PICKER ===== */
+        .color-picker {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .color-option.selected {
+            border-color: var(--dark-color);
+            box-shadow: 0 0 0 2px white;
+        }
+
+        .dark-mode .color-option.selected {
+            border-color: white;
+            box-shadow: 0 0 0 2px var(--dark-color);
+        }
+
+        /* ===== DATE RANGE PICKER ===== */
+        .date-range-picker {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .date-range-picker input {
+            padding: 10px;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+        }
+
+        .dark-mode .date-range-picker input {
+            background: #2d3748;
+            border-color: #4a5568;
+            color: white;
+        }
+
+        .date-range-picker button {
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .date-range-picker button:hover {
+            background: var(--secondary-color);
+        }
+
+        /* ===== PROGRESS RING ===== */
+        .progress-ring {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        .progress-ring circle {
+            fill: none;
+            stroke-width: 8;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+
+        .progress-ring-bg {
+            stroke: #e2e8f0;
+        }
+
+        .progress-ring-fill {
+            stroke: var(--primary-color);
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+
+        .progress-ring-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        /* ===== LOADING OVERLAY ===== */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 8px solid rgba(255,255,255,0.1);
+            border-top: 8px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* ===== EMPTY STATES ===== */
+        .empty-state {
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .empty-state-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 48px;
+        }
+
+        .dark-mode .empty-state-icon {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #64748b;
+        }
+
+        .empty-state h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .empty-state p {
+            font-size: 16px;
+            color: #64748b;
+            max-width: 400px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .dark-mode .empty-state p {
+            color: #94a3b8;
+        }
+
+        .empty-state button {
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .empty-state button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* ===== GRADIENT BACKGROUNDS ===== */
+        .gradient-bg {
+            background: linear-gradient(135deg, 
+                rgba(67, 97, 238, 0.1) 0%,
+                rgba(76, 201, 240, 0.1) 50%,
+                rgba(58, 12, 163, 0.1) 100%);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .dark-mode .gradient-bg {
+            background: linear-gradient(135deg,
+                rgba(67, 97, 238, 0.2) 0%,
+                rgba(76, 201, 240, 0.2) 50%,
+                rgba(58, 12, 163, 0.2) 100%);
+        }
+
+        /* ===== PULSE ANIMATION ===== */
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(67, 97, 238, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(67, 97, 238, 0);
+            }
+        }
+
+        /* ===== WAVE EFFECT ===== */
+        .wave-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wIDUyLjE3M0MyMTMuMyAyMy43MyAyOTkuNSAxMy4wODMgNTU2LjkyIDUyLjE3M2MxODMuNDUgMzQuMyAzMzMuNjIgNTIuMTczIDQ4Ny4wOCA1Mi4xNzMgMTUzLjQ2IDAgMjU3LjUzLTM3LjUgNTU1Ljk5LTcwLjk5djkwSDB6IiBmaWxsPSIjNDM2MWVlIiBmaWxsLW9wYWNpdHk9IjAuMyIvPjwvc3ZnPg==') repeat-x;
+            animation: wave 20s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-1280px); }
+        }
+
+        /* ===== GLASS EFFECT ===== */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== NEUMORPHISM ===== */
+        .neu-card {
+            background: var(--light-color);
+            border-radius: var(--radius-md);
+            box-shadow: 
+                8px 8px 16px rgba(0, 0, 0, 0.1),
+                -8px -8px 16px rgba(255, 255, 255, 0.8);
+        }
+
+        .dark-mode .neu-card {
+            background: #1e293b;
+            box-shadow: 
+                8px 8px 16px rgba(0, 0, 0, 0.3),
+                -8px -8px 16px rgba(255, 255, 255, 0.05);
+        }
+
+        /* ===== HOVER EFFECTS ===== */
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+        }
+
+        .hover-scale {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .hover-rotate {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-rotate:hover {
+            transform: rotate(5deg);
+        }
+
+        /* ===== TEXT EFFECTS ===== */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* ===== BORDER ANIMATIONS ===== */
+        .border-animation {
+            position: relative;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .border-animation::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--success-color));
+            border-radius: inherit;
+            z-index: -1;
+            animation: borderRotate 3s linear infinite;
+        }
+
+        @keyframes borderRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ===== SHIMMER EFFECT ===== */
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* ===== FADE IN ANIMATIONS ===== */
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-down {
+            animation: fadeInDown 0.5s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-left {
+            animation: fadeInLeft 0.5s ease;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in-right {
+            animation: fadeInRight 0.5s ease;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ===== BOUNCE ANIMATIONS ===== */
+        .bounce {
+            animation: bounce 0.5s;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* ===== SLIDE IN ANIMATIONS ===== */
+        .slide-in {
+            animation: slideIn 0.3s ease;
+        }
+
+        /* ===== ROTATE ANIMATIONS ===== */
+        .rotate {
+            animation: rotate 0.5s ease;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== PULSE ANIMATIONS ===== */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* ===== FLIP ANIMATIONS ===== */
+        .flip {
+            animation: flip 0.6s ease;
+        }
+
+        @keyframes flip {
+            0% { transform: perspective(400px) rotateY(0); }
+            100% { transform: perspective(400px) rotateY(360deg); }
+        }
+
+        /* ===== ZOOM ANIMATIONS ===== */
+        .zoom-in {
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .zoom-out {
+            animation: zoomOut 0.3s ease;
+        }
+
+        @keyframes zoomOut {
+            from { transform: scale(1.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* ===== TYPEWRITER EFFECT ===== */
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid var(--primary-color);
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary-color) }
+        }
+    </style>
+</head>
+<body>
+    <!-- MOBILE MENU TOGGLE -->
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar active">
+        <div class="logo">
+            <i class="fas fa-wallet"></i>
+            <span>SmartFinance Pro</span>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#" class="active" onclick="showSection('dashboard')">
+                <i class="fas fa-home"></i><span>Dashboard</span>
+            </a></li>
+            <li><a href="#" onclick="showSection('transactions')">
+                <i class="fas fa-exchange-alt"></i><span>Transactions</span>
+                <span class="nav-badge" id="transactions-badge">0</span>
+            </a></li>
+            <li><a href="#" onclick="showAddModal()">
+                <i class="fas fa-plus-circle"></i><span>Add Transaction</span>
+                <span class="nav-badge pulse">New</span>
+            </a></li>
+            <li><a href="#" onclick="showSection('budgets')">
+                <i class="fas fa-chart-pie"></i><span>Budgets</span>
+                <span class="nav-badge" id="budgets-badge">0</span>
+            </a></li>
+            <li><a href="#" onclick="showSection('goals')">
+                <i class="fas fa-bullseye"></i><span>Goals</span>
+                <span class="nav-badge" id="goals-badge">0</span>
+            </a></li>
+            <li><a href="#" onclick="showSection('reports')">
+                <i class="fas fa-chart-bar"></i><span>Reports</span>
+            </a></li>
+            <li><a href="#" onclick="showSection('investments')">
+                <i class="fas fa-chart-line"></i><span>Investments</span>
+            </a></li>
+            <li><a href="#" onclick="showSection('recurring')">
+                <i class="fas fa-redo-alt"></i><span>Recurring</span>
+            </a></li>
+            <li><a href="#" onclick="showSection('insights')">
+                <i class="fas fa-lightbulb"></i><span>Insights</span>
+                <span class="nav-badge" id="insights-badge">3</span>
+            </a></li>
+            <li><a href="#" onclick="showSection('analytics')">
+                <i class="fas fa-chart-network"></i><span>Analytics</span>
+            </a></li>
+            <li><a href="#" onclick="showSection('settings')">
+                <i class="fas fa-cog"></i><span>Settings</span>
+            </a></li>
+            <li><a href="#" onclick="showSection('help')">
+                <i class="fas fa-question-circle"></i><span>Help</span>
+            </a></li>
+        </ul>
+
+        <div class="user-quick-stats mt-5">
+            <div class="stat-item glass-effect">
+                <div class="stat-icon">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="stat-info">
+                    <h4>Daily Average</h4>
+                    <div class="value">$45.20</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HEADER -->
+        <header class="header glass-effect">
+            <h1 id="page-title">
+                <i class="fas fa-home"></i> Dashboard
+            </h1>
+            
+            <div class="header-controls">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search transactions, budgets, goals..." 
+                           onkeyup="searchContent(this.value)">
+                </div>
+                
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                    <i class="fas fa-moon"></i> <span>Theme</span>
+                </button>
+                
+                <button class="notification-btn" onclick="toggleNotifications()" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                
+                <button class="add-btn" onclick="showAddModal()" title="Add Transaction">
+                    <i class="fas fa-plus"></i> <span>Add Transaction</span>
+                </button>
+                
+                <div class="user-profile" onclick="showUserMenu()">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name">John Doe</div>
+                        <div class="user-email">john@example.com</div>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- TOAST CONTAINER -->
+        <div class="toast-container" id="toastContainer"></div>
+
+        <!-- DASHBOARD SECTION -->
+        <section id="dashboard" class="section active">
+            <!-- QUICK STATS -->
+            <div class="quick-stats">
+                <div class="stat-item hover-lift">
+                    <div class="stat-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>Today's Spending</h4>
+                        <div class="value">$85.50</div>
+                    </div>
+                </div>
+                <div class="stat-item hover-lift">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>Savings Rate</h4>
+                        <div class="value">24.5%</div>
+                    </div>
+                </div>
+                <div class="stat-item hover-lift">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f72585, #b5179e);">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>Streak</h4>
+                        <div class="value">14 days</div>
+                    </div>
+                </div>
+                <div class="stat-item hover-lift">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f8961e, #f3722c);">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>Achievements</h4>
+                        <div class="value">8/15</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DASHBOARD CARDS -->
+            <div class="dashboard-cards">
+                <div class="card balance hover-lift">
+                    <div class="card-header">
+                        <h3>Total Balance</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="total-balance">$5,432.80</div>
+                    <div class="card-change positive">
+                        <i class="fas fa-arrow-up"></i> 12.5% from last month
+                    </div>
+                    <div class="sparkline" id="balance-sparkline"></div>
+                </div>
+                
+                <div class="card income hover-lift">
+                    <div class="card-header">
+                        <h3>Monthly Income</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="total-income">$3,250.00</div>
+                    <div class="card-change positive">
+                        <i class="fas fa-arrow-up"></i> 8.2% from last month
+                    </div>
+                    <div class="sparkline" id="income-sparkline"></div>
+                </div>
+                
+                <div class="card expenses hover-lift">
+                    <div class="card-header">
+                        <h3>Monthly Expenses</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="total-expenses">$1,845.20</div>
+                    <div class="card-change negative">
+                        <i class="fas fa-arrow-down"></i> 5.3% from last month
+                    </div>
+                    <div class="sparkline" id="expenses-sparkline"></div>
+                </div>
+                
+                <div class="card savings hover-lift">
+                    <div class="card-header">
+                        <h3>Monthly Savings</h3>
+                        <div class="card-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="monthly-savings">$1,404.80</div>
+                    <div class="card-change positive">
+                        <i class="fas fa-arrow-up"></i> 15.7% from last month
+                    </div>
+                    <div class="sparkline" id="savings-sparkline"></div>
+                </div>
+            </div>
+
+            <!-- CHARTS CONTAINER -->
+            <div class="charts-container">
+                <div class="chart-box hover-lift">
+                    <h3><i class="fas fa-chart-pie"></i> Expenses by Category</h3>
+                    <canvas id="categoryChart"></canvas>
+                    <div class="chart-legend" id="categoryLegend"></div>
+                </div>
+                
+                <div class="chart-box hover-lift">
+                    <h3><i class="fas fa-chart-line"></i> Monthly Trend</h3>
+                    <canvas id="monthlyTrendChart"></canvas>
+                    <div class="date-range-picker mt-3">
+                        <input type="month" id="trendMonth" value="2024-01">
+                        <button onclick="updateTrendChart()">Update</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RECENT TRANSACTIONS & QUICK ACTIONS -->
+            <div class="grid-2-col">
+                <div class="transactions-section hover-lift">
+                    <div class="section-header">
+                        <h2><i class="fas fa-history"></i> Recent Transactions</h2>
+                        <div class="d-flex gap-2">
+                            <button class="export-btn" onclick="exportTransactions()">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                            <a href="#" onclick="showSection('transactions')" 
+                               class="btn-primary" style="text-decoration: none;">
+                                View All
+                            </a>
+                        </div>
+                    </div>
+                    <div class="transactions-list" id="recent-transactions">
+                        <!-- Filled by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="quick-actions">
+                    <div class="action-button" onclick="showAddModal()">
+                        <div class="action-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="action-title">Add Transaction</div>
+                    </div>
+                    <div class="action-button" onclick="showSection('budgets')">
+                        <div class="action-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="action-title">Manage Budgets</div>
+                    </div>
+                    <div class="action-button" onclick="showSection('goals')">
+                        <div class="action-icon" style="background: linear-gradient(135deg, #f72585, #b5179e);">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="action-title">Set Goals</div>
+                    </div>
+                    <div class="action-button" onclick="showSection('reports')">
+                        <div class="action-icon" style="background: linear-gradient(135deg, #f8961e, #f3722c);">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="action-title">Generate Report</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUDGET OVERVIEW -->
+            <div class="section-header mt-5">
+                <h2><i class="fas fa-chart-pie"></i> Budget Overview</h2>
+                <a href="#" onclick="showSection('budgets')" class="text-primary">View All</a>
+            </div>
+            <div class="budgets-grid" id="budgets-overview">
+                <!-- Filled by JavaScript -->
+            </div>
+
+            <!-- GOALS PROGRESS -->
+            <div class="section-header mt-5">
+                <h2><i class="fas fa-bullseye"></i> Goals Progress</h2>
+                <a href="#" onclick="showSection('goals')" class="text-primary">View All</a>
+            </div>
+            <div class="goals-container" id="goals-overview">
+                <!-- Filled by JavaScript -->
+            </div>
+
+            <!-- INSIGHTS -->
+            <div class="section-header mt-5">
+                <h2><i class="fas fa-lightbulb"></i> Financial Insights</h2>
+            </div>
+            <div class="insights-container">
+                <div class="insight-card hover-lift">
+                    <div class="insight-header">
+                        <div class="insight-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="insight-title">Spending Alert</div>
+                    </div>
+                    <div class="insight-content">
+                        Your food expenses are 15% higher than last month. Consider meal planning to save more.
+                    </div>
+                    <div class="insight-tip">
+                        <strong>Tip:</strong> Try cooking at home 4 times a week to save up to $200/month.
+                    </div>
+                </div>
+                <div class="insight-card hover-lift">
+                    <div class="insight-header">
+                        <div class="insight-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="insight-title">Savings Opportunity</div>
+                    </div>
+                    <div class="insight-content">
+                        You're on track to save $3,000 this quarter. Increase your savings rate by 5% for an extra $450.
+                    </div>
+                    <div class="insight-tip">
+                        <strong>Tip:</strong> Automate your savings to ensure consistency.
+                    </div>
+                </div>
+                <div class="insight-card hover-lift">
+                    <div class="insight-header">
+                        <div class="insight-icon" style="background: linear-gradient(135deg, #f72585, #b5179e);">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="insight-title">Upcoming Bills</div>
+                    </div>
+                    <div class="insight-content">
+                        You have 3 bills due in the next 7 days totaling $285. Make sure to budget accordingly.
+                    </div>
+                    <div class="insight-tip">
+                        <strong>Tip:</strong> Set up automatic payments to avoid late fees.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRANSACTIONS SECTION -->
+        <section id="transactions" class="section" style="display: none;">
+            <div class="section-header">
+                <h2><i class="fas fa-exchange-alt"></i> All Transactions</h2>
+                <div class="d-flex align-center gap-3">
+                    <div class="date-range-picker">
+                        <input type="date" id="startDate" value="2024-01-01">
+                        <span>to</span>
+                        <input type="date" id="endDate" value="2024-12-31">
+                        <button onclick="filterByDate()">Filter</button>
+                    </div>
+                    <div class="filters">
+                        <button class="filter-btn active" onclick="filterTransactions('all')">All</button>
+                        <button class="filter-btn" onclick="filterTransactions('income')">Income</button>
+                        <button class="filter-btn" onclick="filterTransactions('expense')">Expenses</button>
+                        <select class="filter-btn" onchange="filterByCategory(this.value)">
+                            <option value="all">All Categories</option>
+                            <option value="food">Food</option>
+                            <option value="transport">Transport</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="bills">Bills</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="health">Health</option>
+                            <option value="education">Education</option>
+                        </select>
+                    </div>
+                    <button class="export-btn" onclick="exportTransactions()">
+                        <i class="fas fa-download"></i> Export CSV
+                    </button>
+                </div>
+            </div>
+            
+            <div class="stats-cards mb-4">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <div class="stat-card-title">Filtered Transactions</div>
+                    </div>
+                    <div class="stat-card-value" id="filtered-count">0</div>
+                    <div class="stat-card-change positive" id="filtered-total">$0.00</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="stat-card-title">Total Income</div>
+                    </div>
+                    <div class="stat-card-value" id="filtered-income">$0.00</div>
+                    <div class="stat-card-change positive">+0%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon" style="background: linear-gradient(135deg, #f72585, #b5179e);">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="stat-card-title">Total Expenses</div>
+                    </div>
+                    <div class="stat-card-value" id="filtered-expenses">$0.00</div>
+                    <div class="stat-card-change negative">+0%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon" style="background: linear-gradient(135deg, #4cc9f0, #4895ef);">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="stat-card-title">Net Balance</div>
+                    </div>
+                    <div class="stat-card-value" id="filtered-balance">$0.00</div>
+                    <div class="stat-card-change positive">+0%</div>
+                </div>
+            </div>
+            
+            <div class="transactions-list" id="all-transactions">
+                <!-- Filled by JavaScript -->
+            </div>
+            
+            <div class="text-center mt-4">
+                <button class="btn-secondary" onclick="loadMoreTransactions()">
+                    <i class="fas fa-redo"></i> Load More Transactions
+                </button>
+            </div>
+        </section>
+
+        <!-- BUDGETS SECTION -->
+        <section id="budgets" class="section" style="display: none;">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-pie"></i> Budget Management</h2>
+                <div class="d-flex gap-2">
+                    <button class="btn-success" onclick="addBudgetModal()">
+                        <i class="fas fa-plus"></i> Add Budget
+                    </button>
+                    <button class="export-btn" onclick="exportBudgets()">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+            </div>
+            
+            <div class="budgets-grid" id="budgets-container">
+                <!-- Filled by JavaScript -->
+            </div>
+            
+            <div class="gradient-bg mt-5">
+                <h3 class="text-center mb-4">Budget Planning Tips</h3>
+                <div class="insights-container">
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <div class="insight-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="insight-title">50/30/20 Rule</div>
+                        </div>
+                        <div class="insight-content">
+                            Allocate 50% for needs, 30% for wants, and 20% for savings and debt repayment.
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <div class="insight-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="insight-title">Track Regularly</div>
+                        </div>
+                        <div class="insight-content">
+                            Review your budget weekly to stay on track and make adjustments as needed.
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-header">
+                            <div class="insight-icon" style="background: linear-gradient(135deg, #f72585, #b5179e);">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="insight-title">Set Alerts</div>
+                        </div>
+                        <div class="insight-content">
+                            Enable notifications when you're approaching budget limits in any category.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GOALS SECTION -->
+        <section id="goals" class="section" style="display: none;">
+            <div class="section-header">
+                <h2><i class="fas fa-bullseye"></i> Savings Goals</h2>
+                <div class="d-flex gap-2">
+                    <button class="btn-success" onclick="addGoalModal()">
+                        <i class="fas fa-plus"></i> Add Goal
+                    </button>
+                    <button class="export-btn" onclick="exportGoals()">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+            </div>
+            
+            <div class="goals-container" id="goals-container">
+                <!-- Filled by JavaScript -->
+            </div>
+            
+            <div class="achievements-grid mt-5">
+                <div class="achievement-badge">
+                    <div class="badge-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div class="badge-title">First Saver</div>
+                    <div class="badge-description">Save your first $100</div>
+                </div>
+                <div class="achievement-badge">
+                    <div class="badge-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="badge-title">Budget Master</div>
+                    <div class="badge-description">Stay within budget for 30 days</div>
+                </div>
+                <div class="achievement-badge locked">
+                    <div class="badge-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="badge-title">Savings Guru</div>
+                    <div class="badge-description">Save $10,000 total</div>
+                </div>
+                <div class="achievement-badge">
+                    <div class="badge-progress">75%</div>
+                    <div class="badge-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="badge-title">Consistency King</div>
+                    <div class="badge-description">Track expenses for 14 days straight</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REPORTS SECTION -->
+        <section id="reports" class="section" style="display: none;">
+            <h2><i class="fas fa-chart-bar"></i> Financial Reports</h2>
+            
+            <div class="report-filters">
+                <select id="report-type" class="date-filter" onchange="generateReport()">
+                    <option value="monthly">Monthly Report</option>
+                    <option value="yearly">Yearly Report</option>
+                    <option value="quarterly">Quarterly Report</option>
+                    <option value="category">Category Analysis</option>
+                    <option value="trend">Spending Trends</option>
+                    <option value="comparison">Year Comparison</option>
+                </select>
+                <input type="month" id="report-month" class="date-filter" value="2024-01" onchange="generateReport()">
+                <input type="number" id="report-year" class="date-filter" value="2024" min="2000" max="2030" onchange="generateReport()">
+                <button class="export-btn" onclick="exportReport()">
+                    <i class="fas fa-download"></i> Export PDF
+                </button>
+            </div>
+            
+            <div id="report-content">
+                <!-- Filled by JavaScript -->
+            </div>
+            
+            <div class="viz-container mt-5">
+                <div class="viz-header">
+                    <div class="viz-title">Spending Trends Visualization</div>
+                    <div class="viz-controls">
+                        <button class="viz-control active" onclick="changeVizType('line')">Line</button>
+                        <button class="viz-control" onclick="changeVizType('bar')">Bar</button>
+                        <button class="viz-control" onclick="changeVizType('area')">Area</button>
+                    </div>
+                </div>
+                <div class="viz-content">
+                    <canvas id="trendVizChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADD MORE SECTIONS HERE (Investments, Recurring, Insights, Analytics, Settings, Help) -->
+
+    </main>
+
+    <!-- ADD TRANSACTION MODAL -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-plus-circle"></i> Add Transaction</h2>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="transactionForm" onsubmit="addTransaction(event)">
+                <div class="form-group">
+                    <label>Transaction Type</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="type" value="income" checked onchange="toggleTransactionType()">
+                            <i class="fas fa-money-bill-wave"></i> Income
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="type" value="expense" onchange="toggleTransactionType()">
+                            <i class="fas fa-shopping-cart"></i> Expense
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="type" value="transfer" onchange="toggleTransactionType()">
+                            <i class="fas fa-exchange-alt"></i> Transfer
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description *</label>
+                    <input type="text" id="description" class="form-control" 
+                           placeholder="Enter transaction description" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="amount">Amount ($) *</label>
+                        <input type="number" id="amount" class="form-control" 
+                               placeholder="0.00" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date *</label>
+                        <input type="date" id="date" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group" id="category-group">
+                    <label>Category *</label>
+                    <div class="category-options">
+                        <div class="category-option" data-category="food" onclick="selectCategory('food')">
+                            <i class="fas fa-utensils"></i> Food
+                        </div>
+                        <div class="category-option" data-category="transport" onclick="selectCategory('transport')">
+                            <i class="fas fa-car"></i> Transport
+                        </div>
+                        <div class="category-option" data-category="shopping" onclick="selectCategory('shopping')">
+                            <i class="fas fa-shopping-bag"></i> Shopping
+                        </div>
+                        <div class="category-option" data-category="bills" onclick="selectCategory('bills')">
+                            <i class="fas fa-file-invoice-dollar"></i> Bills
+                        </div>
+                        <div class="category-option" data-category="entertainment" onclick="selectCategory('entertainment')">
+                            <i class="fas fa-film"></i> Entertainment
+                        </div>
+                        <div class="category-option" data-category="health" onclick="selectCategory('health')">
+                            <i class="fas fa-heartbeat"></i> Health
+                        </div>
+                        <div class="category-option" data-category="education" onclick="selectCategory('education')">
+                            <i class="fas fa-graduation-cap"></i> Education
+                        </div>
+                        <div class="category-option" data-category="other" onclick="selectCategory('other')">
+                            <i class="fas fa-ellipsis-h"></i> Other
+                        </div>
+                    </div>
+                    <input type="hidden" id="category" value="food" required>
+                </div>
+
+                <div class="form-group" id="account-group" style="display: none;">
+                    <label>Account</label>
+                    <select id="account" class="form-control">
+                        <option value="checking">Checking Account</option>
+                        <option value="savings">Savings Account</option>
+                        <option value="credit">Credit Card</option>
+                        <option value="cash">Cash</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notes (Optional)</label>
+                    <textarea id="notes" class="form-control" rows="3" 
+                              placeholder="Add any additional notes about this transaction..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="isRecurring"> Set as recurring transaction
+                    </label>
+                </div>
+
+                <div id="recurring-options" style="display: none;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="recurring-frequency">Frequency</label>
+                            <select id="recurring-frequency" class="form-control">
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="yearly">Yearly</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="recurring-end">End Date (Optional)</label>
+                            <input type="date" id="recurring-end" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn-secondary" onclick="closeModal()">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Save Transaction
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- NOTIFICATIONS PANEL -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="notifications-header">
+            <h3><i class="fas fa-bell"></i> Notifications</h3>
+            <button class="close-modal" onclick="toggleNotifications()">&times;</button>
+        </div>
+        <div class="notifications-content" id="notificationsContent">
+            <!-- Notifications will be added here -->
+        </div>
+    </div>
+
+    <!-- CHATBOT ASSISTANT -->
+    <button class="chatbot-toggle" onclick="toggleChatbot()">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h3><i class="fas fa-robot"></i> Finance Assistant</h3>
+            <button class="close-chatbot" onclick="toggleChatbot()">&times;</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot">
+                <div class="message-content">
+                    Hello! I'm your finance assistant. How can I help you today?
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <form onsubmit="sendChatbotMessage(event)">
+                <input type="text" id="chatbotInput" placeholder="Ask me anything...">
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOADING OVERLAY -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Processing your request...</div>
+    </div>
+
+    <!-- ACHIEVEMENT POPUP -->
+    <div class="achievement-popup" id="achievementPopup">
+        <div class="achievement-popup-icon">
+            <i class="fas fa-trophy"></i>
+        </div>
+        <h3 id="achievementTitle">Achievement Unlocked!</h3>
+        <p id="achievementDescription">You've completed a milestone!</p>
+        <button onclick="closeAchievementPopup()">Awesome!</button>
+    </div>
+
+    <!-- WELCOME TOUR -->
+    <div class="tour-overlay" id="tourOverlay"></div>
+    <div class="tour-step" id="tourStep1" style="top: 100px; left: 300px;">
+        <div class="tour-header">
+            <div class="tour-title">Welcome to SmartFinance Pro! 👋</div>
+        </div>
+        <div class="tour-content">
+            Let me show you around your new financial dashboard. Click next to continue.
+        </div>
+        <div class="tour-actions">
+            <button class="tour-skip" onclick="skipTour()">Skip Tour</button>
+            <button class="tour-next" onclick="nextTourStep()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        // ===== ENHANCED FINANCE TRACKER CLASS =====
+        class EnhancedFinanceTracker {
+            constructor() {
+                this.transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+                this.budgets = JSON.parse(localStorage.getItem('budgets')) || [];
+                this.goals = JSON.parse(localStorage.getItem('goals')) || [];
+                this.settings = JSON.parse(localStorage.getItem('settings')) || this.getDefaultSettings();
+                this.achievements = JSON.parse(localStorage.getItem('achievements')) || this.getDefaultAchievements();
+                this.notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+                this.recurringTransactions = JSON.parse(localStorage.getItem('recurringTransactions')) || [];
+                this.charts = {};
+                this.selectedCategory = 'food';
+                this.currentFilter = 'all';
+                this.currentPage = 1;
+                this.itemsPerPage = 10;
+                
+                this.initializeData();
+            }
+
+            getDefaultSettings() {
+                return {
+                    theme: 'light',
+                    currency: 'USD',
+                    dateFormat: 'MM/DD/YYYY',
+                    budgetAlerts: true,
+                    goalNotifications: true,
+                    autoBackup: false,
+                    backupFrequency: 'weekly'
+                };
+            }
+
+            getDefaultAchievements() {
+                return [
+                    { id: 1, name: 'First Transaction', description: 'Added your first transaction', earned: true, progress: 100 },
+                    { id: 2, name: 'Budget Master', description: 'Created 3 budgets', earned: false, progress: 66 },
+                    { id: 3, name: 'Savings Guru', description: 'Saved $1000 total', earned: false, progress: 45 },
+                    { id: 4, name: 'Consistency King', description: 'Tracked expenses for 30 days', earned: false, progress: 14 },
+                    { id: 5, name: 'Goal Getter', description: 'Completed 2 savings goals', earned: false, progress: 50 }
+                ];
+            }
+
+            initializeData() {
+                if (this.transactions.length === 0) {
+                    this.initializeSampleData();
+                }
+                if (this.budgets.length === 0) {
+                    this.initializeSampleBudgets();
+                }
+                if (this.goals.length === 0) {
+                    this.initializeSampleGoals();
+                }
+                this.initializeNotifications();
+                this.saveAll();
+            }
+
+            initializeSampleData() {
+                const sampleTransactions = [
+                    { 
+                        id: 1, 
+                        type: 'income', 
+                        description: 'Monthly Salary', 
+                        amount: 3500, 
+                        category: 'income', 
+                        date: '2024-01-15',
+                        account: 'checking',
+                        notes: 'Regular monthly salary',
+                        tags: ['salary', 'recurring']
+                    },
+                    { 
+                        id: 2, 
+                        type: 'expense', 
+                        description: 'Grocery Shopping', 
+                        amount: 185.50, 
+                        category: 'food', 
+                        date: '2024-01-16',
+                        account: 'credit',
+                        notes: 'Weekly groceries',
+                        tags: ['essential', 'food']
+                    },
+                    { 
+                        id: 3, 
+                        type: 'expense', 
+                        description: 'Gasoline', 
+                        amount: 65.25, 
+                        category: 'transport', 
+                        date: '2024-01-16',
+                        account: 'credit',
+                        notes: 'Car fuel',
+                        tags: ['essential', 'transport']
+                    },
+                    { 
+                        id: 4, 
+                        type: 'expense', 
+                        description: 'Netflix Subscription', 
+                        amount: 15.99, 
+                        category: 'entertainment', 
+                        date: '2024-01-17',
+                        account: 'checking',
+                        notes: 'Monthly subscription',
+                        tags: ['subscription', 'recurring']
+                    },
+                    { 
+                        id: 5, 
+                        type: 'expense', 
+                        description: 'Electricity Bill', 
+                        amount: 120.75, 
+                        category: 'bills', 
+                        date: '2024-01-18',
+                        account: 'checking',
+                        notes: 'Monthly utility bill',
+                        tags: ['bill', 'recurring', 'essential']
+                    },
+                    { 
+                        id: 6, 
+                        type: 'income', 
+                        description: 'Freelance Project', 
+                        amount: 850, 
+                        category: 'income', 
+                        date: '2024-01-20',
+                        account: 'checking',
+                        notes: 'Web development project',
+                        tags: ['freelance', 'one-time']
+                    },
+                    { 
+                        id: 7, 
+                        type: 'expense', 
+                        description: 'New Clothes', 
+                        amount: 245.99, 
+                        category: 'shopping', 
+                        date: '2024-01-21',
+                        account: 'credit',
+                        notes: 'Winter clothing',
+                        tags: ['shopping', 'luxury']
+                    },
+                    { 
+                        id: 8, 
+                        type: 'expense', 
+                        description: 'Dinner at Restaurant', 
+                        amount: 89.50, 
+                        category: 'food', 
+                        date: '2024-01-22',
+                        account: 'credit',
+                        notes: 'Celebration dinner',
+                        tags: ['dining', 'luxury']
+                    },
+                    { 
+                        id: 9, 
+                        type: 'expense', 
+                        description: 'Gym Membership', 
+                        amount: 29.99, 
+                        category: 'health', 
+                        date: '2024-01-23',
+                        account: 'checking',
+                        notes: 'Monthly gym fee',
+                        tags: ['health', 'recurring']
+                    },
+                    { 
+                        id: 10, 
+                        type: 'income', 
+                        description: 'Stock Dividends', 
+                        amount: 150.25, 
+                        category: 'income', 
+                        date: '2024-01-25',
+                        account: 'savings',
+                        notes: 'Quarterly dividends',
+                        tags: ['investment', 'passive-income']
+                    }
+                ];
+
+                this.transactions = sampleTransactions;
+            }
+
+            initializeSampleBudgets() {
+                const sampleBudgets = [
+                    { id: 1, category: 'food', limit: 600, spent: 275.00, period: 'monthly', color: '#FF6384' },
+                    { id: 2, category: 'transport', limit: 250, spent: 65.25, period: 'monthly', color: '#36A2EB' },
+                    { id: 3, category: 'entertainment', limit: 150, spent: 15.99, period: 'monthly', color: '#9966FF' },
+                    { id: 4, category: 'shopping', limit: 300, spent: 245.99, period: 'monthly', color: '#FFCE56' },
+                    { id: 5, category: 'bills', limit: 400, spent: 120.75, period: 'monthly', color: '#4BC0C0' },
+                    { id: 6, category: 'health', limit: 100, spent: 29.99, period: 'monthly', color: '#FF6B6B' }
+                ];
+
+                this.budgets = sampleBudgets;
+            }
+
+            initializeSampleGoals() {
+                const sampleGoals = [
+                    { 
+                        id: 1, 
+                        name: 'New Laptop', 
+                        target: 1200, 
+                        saved: 800, 
+                        deadline: '2024-06-30',
+                        color: '#4361ee',
+                        icon: 'fas fa-laptop'
+                    },
+                    { 
+                        id: 2, 
+                        name: 'Vacation Fund', 
+                        target: 2000, 
+                        saved: 1200, 
+                        deadline: '2024-12-31',
+                        color: '#4cc9f0',
+                        icon: 'fas fa-umbrella-beach'
+                    },
+                    { 
+                        id: 3, 
+                        name: 'Emergency Fund', 
+                        target: 5000, 
+                        saved: 2500, 
+                        deadline: '2024-12-31',
+                        color: '#2ecc71',
+                        icon: 'fas fa-shield-alt'
+                    },
+                    { 
+                        id: 4, 
+                        name: 'Car Down Payment', 
+                        target: 3000, 
+                        saved: 1500, 
+                        deadline: '2024-09-30',
+                        color: '#f72585',
+                        icon: 'fas fa-car'
+                    }
+                ];
+
+                this.goals = sampleGoals;
+            }
+
+            initializeNotifications() {
+                const sampleNotifications = [
+                    {
+                        id: 1,
+                        type: 'warning',
+                        title: 'Budget Alert',
+                        message: 'You have spent 80% of your Food budget',
+                        timestamp: new Date().toISOString(),
+                        read: false
+                    },
+                    {
+                        id: 2,
+                        type: 'success',
+                        title: 'Goal Progress',
+                        message: 'You are 75% towards your Laptop goal!',
+                        timestamp: new Date(Date.now() - 86400000).toISOString(),
+                        read: false
+                    },
+                    {
+                        id: 3,
+                        type: 'info',
+                        title: 'Bill Reminder',
+                        message: 'Electricity bill of $120.75 due in 3 days',
+                        timestamp: new Date(Date.now() - 172800000).toISOString(),
+                        read: true
+                    }
+                ];
+
+                this.notifications = sampleNotifications;
+            }
+
+            saveAll() {
+                localStorage.setItem('transactions', JSON.stringify(this.transactions));
+                localStorage.setItem('budgets', JSON.stringify(this.budgets));
+                localStorage.setItem('goals', JSON.stringify(this.goals));
+                localStorage.setItem('settings', JSON.stringify(this.settings));
+                localStorage.setItem('achievements', JSON.stringify(this.achievements));
+                localStorage.setItem('notifications', JSON.stringify(this.notifications));
+                localStorage.setItem('recurringTransactions', JSON.stringify(this.recurringTransactions));
+            }
+
+            // ===== TRANSACTION METHODS =====
+            addTransaction(transaction) {
+                const newTransaction = {
+                    id: Date.now(),
+                    ...transaction,
+                    date: transaction.date || new Date().toISOString().split('T')[0],
+                    createdAt: new Date().toISOString(),
+                    tags: transaction.tags || []
+                };
+                
+                this.transactions.unshift(newTransaction);
+                
+                // Update budget if it's an expense
+                if (transaction.type === 'expense') {
+                    this.updateBudget(transaction.category, transaction.amount);
+                }
+                
+                // Check for achievements
+                this.checkAchievements();
+                
+                // Generate notifications
+                this.generateTransactionNotification(newTransaction);
+                
+                this.saveAll();
+                this.updateUI();
+                
+                // Show success toast
+                this.showToast('Transaction added successfully!', 'success');
+                
+                return newTransaction;
+            }
+
+            updateTransaction(id, updates) {
+                const index = this.transactions.findIndex(t => t.id === id);
+                if (index !== -1) {
+                    const oldTransaction = this.transactions[index];
+                    
+                    // Refund old budget if it was an expense
+                    if (oldTransaction.type === 'expense') {
+                        this.updateBudget(oldTransaction.category, -oldTransaction.amount);
+                    }
+                    
+                    // Update transaction
+                    this.transactions[index] = { ...this.transactions[index], ...updates };
+                    
+                    // Apply new budget if it's an expense
+                    if (updates.type === 'expense' || oldTransaction.type === 'expense') {
+                        const newCategory = updates.category || oldTransaction.category;
+                        const newAmount = updates.amount || oldTransaction.amount;
+                        this.updateBudget(newCategory, newAmount);
+                    }
+                    
+                    this.saveAll();
+                    this.updateUI();
+                    this.showToast('Transaction updated successfully!', 'success');
+                    return true;
+                }
+                return false;
+            }
+
+            deleteTransaction(id) {
+                const transaction = this.transactions.find(t => t.id === id);
+                if (transaction) {
+                    // Refund budget if deleting expense
+                    if (transaction.type === 'expense') {
+                        this.updateBudget(transaction.category, -transaction.amount);
+                    }
+                    
+                    this.transactions = this.transactions.filter(t => t.id !== id);
+                    this.saveAll();
+                    this.updateUI();
+                    this.showToast('Transaction deleted successfully!', 'success');
+                    return true;
+                }
+                return false;
+            }
+
+            getTransactions(filter = 'all', category = 'all', page = 1) {
+                let filtered = this.transactions;
+                
+                // Apply filters
+                if (filter === 'income') filtered = filtered.filter(t => t.type === 'income');
+                else if (filter === 'expense') filtered = filtered.filter(t => t.type === 'expense');
+                
+                if (category !== 'all') filtered = filtered.filter(t => t.category === category);
+                
+                // Apply date range filter if set
+                const startDate = document.getElementById('startDate')?.value;
+                const endDate = document.getElementById('endDate')?.value;
+                
+                if (startDate && endDate) {
+                    filtered = filtered.filter(t => {
+                        const transDate = new Date(t.date);
+                        return transDate >= new Date(startDate) && transDate <= new Date(endDate);
+                    });
+                }
+                
+                // Apply search filter if set
+                const searchTerm = document.getElementById('searchInput')?.value.toLowerCase();
+                if (searchTerm) {
+                    filtered = filtered.filter(t => 
+                        t.description.toLowerCase().includes(searchTerm) ||
+                        t.category.toLowerCase().includes(searchTerm) ||
+                        (t.notes && t.notes.toLowerCase().includes(searchTerm))
+                    );
+                }
+                
+                // Calculate pagination
+                const total = filtered.length;
+                const start = (page - 1) * this.itemsPerPage;
+                const end = start + this.itemsPerPage;
+                const paginated = filtered.slice(start, end);
+                
+                return {
+                    transactions: paginated,
+                    total,
+                    page,
+                    totalPages: Math.ceil(total / this.itemsPerPage),
+                    hasMore: end < total
+                };
+            }
+
+            // ===== BUDGET METHODS =====
+            updateBudget(category, amount) {
+                const budget = this.budgets.find(b => b.category === category);
+                if (budget) {
+                    budget.spent += amount;
+                    
+                    // Generate notification if budget exceeds threshold
+                    if (budget.spent > budget.limit * 0.8) {
+                        this.generateBudgetNotification(budget);
+                    }
+                    
+                    this.saveAll();
+                }
+            }
+
+            addBudget(budget) {
+                const newBudget = {
+                    id: Date.now(),
+                    ...budget,
+                    spent: budget.spent || 0
+                };
+                
+                this.budgets.push(newBudget);
+                this.saveAll();
+                this.updateUI();
+                this.showToast('Budget added successfully!', 'success');
+                return newBudget;
+            }
+
+            updateBudgetItem(id, updates) {
+                const index = this.budgets.findIndex(b => b.id === id);
+                if (index !== -1) {
+                    this.budgets[index] = { ...this.budgets[index], ...updates };
+                    this.saveAll();
+                    this.updateUI();
+                    this.showToast('Budget updated successfully!', 'success');
+                    return true;
+                }
+                return false;
+            }
+
+            deleteBudget(id) {
+                this.budgets = this.budgets.filter(b => b.id !== id);
+                this.saveAll();
+                this.updateUI();
+                this.showToast('Budget deleted successfully!', 'success');
+                return true;
+            }
+
+            // ===== GOAL METHODS =====
+            addGoal(goal) {
+                const newGoal = {
+                    id: Date.now(),
+                    ...goal,
+                    saved: goal.saved || 0,
+                    createdAt: new Date().toISOString()
+                };
+                
+                this.goals.push(newGoal);
+                this.saveAll();
+                this.updateUI();
+                this.showToast('Goal added successfully!', 'success');
+                return newGoal;
+            }
+
+            updateGoal(id, amount) {
+                const goal = this.goals.find(g => g.id === id);
+                if (goal) {
+                    goal.saved += amount;
+                    
+                    // Check if goal is completed
+                    if (goal.saved >= goal.target) {
+                        this.generateGoalCompletionNotification(goal);
+                        this.unlockAchievement('goal_getter');
+                    }
+                    
+                    this.saveAll();
+                    this.updateUI();
+                    
+                    if (amount > 0) {
+                        this.showToast(`Added $${amount.toFixed(2)} to "${goal.name}"`, 'success');
+                    }
+                    return true;
+                }
+                return false;
+            }
+
+            deleteGoal(id) {
+                this.goals = this.goals.filter(g => g.id !== id);
+                this.saveAll();
+                this.updateUI();
+                this.showToast('Goal deleted successfully!', 'success');
+                return true;
+            }
+
+            // ===== ACHIEVEMENT METHODS =====
+            checkAchievements() {
+                // Check for first transaction achievement
+                if (this.transactions.length >= 1) {
+                    this.unlockAchievement('first_transaction');
+                }
+                
+                // Check for budget master achievement
+                if (this.budgets.length >= 3) {
+                    this.unlockAchievement('budget_master');
+                }
+                
+                // Check for savings guru achievement
+                const totalSaved = this.getTotalBalance();
+                if (totalSaved >= 1000) {
+                    this.unlockAchievement('savings_guru');
+                }
+                
+                // Update progress for consistency king
+                this.updateAchievementProgress('consistency_king', this.transactions.length);
+            }
+
+            unlockAchievement(achievementType) {
+                const achievementMap = {
+                    'first_transaction': 1,
+                    'budget_master': 2,
+                    'savings_guru': 3,
+                    'consistency_king': 4,
+                    'goal_getter': 5
+                };
+                
+                const achievementId = achievementMap[achievementType];
+                const achievement = this.achievements.find(a => a.id === achievementId);
+                
+                if (achievement && !achievement.earned) {
+                    achievement.earned = true;
+                    achievement.progress = 100;
+                    this.saveAll();
+                    
+                    // Show achievement popup
+                    this.showAchievementPopup(achievement.name, achievement.description);
+                    
+                    // Generate notification
+                    this.generateAchievementNotification(achievement);
+                }
+            }
+
+            updateAchievementProgress(achievementType, progress) {
+                const achievementMap = {
+                    'consistency_king': 4
+                };
+                
+                const achievementId = achievementMap[achievementType];
+                const achievement = this.achievements.find(a => a.id === achievementId);
+                
+                if (achievement && !achievement.earned) {
+                    const newProgress = Math.min((progress / 30) * 100, 100);
+                    achievement.progress = newProgress;
+                    
+                    if (newProgress >= 100) {
+                        achievement.earned = true;
+                        this.showAchievementPopup(achievement.name, achievement.description);
+                    }
+                    
+                    this.saveAll();
+                }
+            }
+
+            // ===== NOTIFICATION METHODS =====
+            generateTransactionNotification(transaction) {
+                const notification = {
+                    id: Date.now(),
+                    type: transaction.type === 'income' ? 'success' : 'info',
+                    title: `${transaction.type === 'income' ? 'Income' : 'Expense'} Added`,
+                    message: `${transaction.type === 'income' ? '+' : '-'}$${transaction.amount.toFixed(2)} - ${transaction.description}`,
+                    timestamp: new Date().toISOString(),
+                    read: false
+                };
+                
+                this.notifications.unshift(notification);
+                this.saveAll();
+                this.updateNotificationBadges();
+            }
+
+            generateBudgetNotification(budget) {
+                const percentage = (budget.spent / budget.limit) * 100;
+                const notification = {
+                    id: Date.now(),
+                    type: 'warning',
+                    title: 'Budget Alert',
+                    message: `You have spent ${percentage.toFixed(1)}% of your ${this.getCategoryName(budget.category)} budget`,
+                    timestamp: new Date().toISOString(),
+                    read: false
+                };
+                
+                this.notifications.unshift(notification);
+                this.saveAll();
+                this.updateNotificationBadges();
+            }
+
+            generateGoalCompletionNotification(goal) {
+                const notification = {
+                    id: Date.now(),
+                    type: 'success',
+                    title: 'Goal Achieved! 🎉',
+                    message: `Congratulations! You've reached your "${goal.name}" goal!`,
+                    timestamp: new Date().toISOString(),
+                    read: false
+                };
+                
+                this.notifications.unshift(notification);
+                this.saveAll();
+                this.updateNotificationBadges();
+            }
+
+            generateAchievementNotification(achievement) {
+                const notification = {
+                    id: Date.now(),
+                    type: 'info',
+                    title: 'Achievement Unlocked!',
+                    message: `${achievement.name}: ${achievement.description}`,
+                    timestamp: new Date().toISOString(),
+                    read: false
+                };
+                
+                this.notifications.unshift(notification);
+                this.saveAll();
+                this.updateNotificationBadges();
+            }
+
+            markNotificationAsRead(id) {
+                const notification = this.notifications.find(n => n.id === id);
+                if (notification) {
+                    notification.read = true;
+                    this.saveAll();
+                    this.updateNotificationBadges();
+                    return true;
+                }
+                return false;
+            }
+
+            markAllNotificationsAsRead() {
+                this.notifications.forEach(n => n.read = true);
+                this.saveAll();
+                this.updateNotificationBadges();
+            }
+
+            getUnreadNotificationsCount() {
+                return this.notifications.filter(n => !n.read).length;
+            }
+
+            // ===== CALCULATION METHODS =====
+            getTotalBalance() {
+                const income = this.transactions
+                    .filter(t => t.type === 'income')
+                    .reduce((sum, t) => sum + t.amount, 0);
+                const expenses = this.transactions
+                    .filter(t => t.type === 'expense')
+                    .reduce((sum, t) => sum + t.amount, 0);
+                return income - expenses;
+            }
+
+            getTotalIncome() {
+                return this.transactions
+                    .filter(t => t.type === 'income')
+                    .reduce((sum, t) => sum + t.amount, 0);
+            }
+
+            getTotalExpenses() {
+                return this.transactions
+                    .filter(t => t.type === 'expense')
+                    .reduce((sum, t) => sum + t.amount, 0);
+            }
+
+            getMonthlySavings() {
+                const currentMonth = new Date().getMonth();
+                const currentYear = new Date().getFullYear();
+                
+                const monthlyIncome = this.transactions
+                    .filter(t => {
+                        const date = new Date(t.date);
+                        return t.type === 'income' && 
+                               date.getMonth() === currentMonth && 
+                               date.getFullYear() === currentYear;
+                    })
+                    .reduce((sum, t) => sum + t.amount, 0);
+                
+                const monthlyExpenses = this.transactions
+                    .filter(t => {
+                        const date = new Date(t.date);
+                        return t.type === 'expense' && 
+                               date.getMonth() === currentMonth && 
+                               date.getFullYear() === currentYear;
+                    })
+                    .reduce((sum, t) => sum + t.amount, 0);
+                
+                return monthlyIncome - monthlyExpenses;
+            }
+
+            getExpensesByCategory() {
+                const categories = ['food', 'transport', 'shopping', 'bills', 'entertainment', 'health', 'education', 'other'];
+                const result = {};
+                
+                categories.forEach(category => {
+                    result[category] = this.transactions
+                        .filter(t => t.type === 'expense' && t.category === category)
+                        .reduce((sum, t) => sum + t.amount, 0);
+                });
+                
+                return result;
+            }
+
+            getMonthlyTrend() {
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                const currentMonth = new Date().getMonth();
+                const labels = months.slice(Math.max(0, currentMonth - 5), currentMonth + 1);
+                
+                // Calculate actual data from transactions
+                const incomeData = labels.map((month, index) => {
+                    const monthIndex = (currentMonth - 5 + index + 12) % 12;
+                    return this.transactions
+                        .filter(t => {
+                            const date = new Date(t.date);
+                            return t.type === 'income' && 
+                                   date.getMonth() === monthIndex && 
+                                   date.getFullYear() === new Date().getFullYear();
+                        })
+                        .reduce((sum, t) => sum + t.amount, 0);
+                });
+                
+                const expensesData = labels.map((month, index) => {
+                    const monthIndex = (currentMonth - 5 + index + 12) % 12;
+                    return this.transactions
+                        .filter(t => {
+                            const date = new Date(t.date);
+                            return t.type === 'expense' && 
+                                   date.getMonth() === monthIndex && 
+                                   date.getFullYear() === new Date().getFullYear();
+                        })
+                        .reduce((sum, t) => sum + t.amount, 0);
+                });
+                
+                return { labels, income: incomeData, expenses: expensesData };
+            }
+
+            // ===== UI UPDATE METHODS =====
+            updateUI() {
+                this.updateDashboard();
+                this.updateTransactions();
+                this.updateBudgets();
+                this.updateGoals();
+                this.updateCharts();
+                this.updateNotificationBadges();
+                this.updateStats();
+            }
+
+            updateDashboard() {
+                // Update cards
+                document.getElementById('total-balance').textContent = `$${this.getTotalBalance().toFixed(2)}`;
+                document.getElementById('total-income').textContent = `$${this.getTotalIncome().toFixed(2)}`;
+                document.getElementById('total-expenses').textContent = `$${this.getTotalExpenses().toFixed(2)}`;
+                document.getElementById('monthly-savings').textContent = `$${this.getMonthlySavings().toFixed(2)}`;
+                
+                // Update recent transactions
+                const recent = this.transactions.slice(0, 5);
+                this.renderTransactions(recent, 'recent-transactions');
+                
+                // Update sparklines
+                this.updateSparklines();
+            }
+
+            updateTransactions() {
+                const result = this.getTransactions(this.currentFilter, 'all', this.currentPage);
+                this.renderTransactions(result.transactions, 'all-transactions');
+                
+                // Update filtered stats
+                document.getElementById('filtered-count').textContent = result.total;
+                document.getElementById('filtered-total').textContent = `$${result.transactions.reduce((sum, t) => sum + t.amount, 0).toFixed(2)}`;
+                
+                const filteredIncome = result.transactions
+                    .filter(t => t.type === 'income')
+                    .reduce((sum, t) => sum + t.amount, 0);
+                const filteredExpenses = result.transactions
+                    .filter(t => t.type === 'expense')
+                    .reduce((sum, t) => sum + t.amount, 0);
+                
+                document.getElementById('filtered-income').textContent = `$${filteredIncome.toFixed(2)}`;
+                document.getElementById('filtered-expenses').textContent = `$${filteredExpenses.toFixed(2)}`;
+                document.getElementById('filtered-balance').textContent = `$${(filteredIncome - filteredExpenses).toFixed(2)}`;
+            }
+
+            updateBudgets() {
+                const container = document.getElementById('budgets-container');
+                if (!container) return;
+                
+                container.innerHTML = this.budgets.map(budget => {
+                    const percentage = (budget.spent / budget.limit) * 100;
+                    const progressColor = percentage > 100 ? '#f72585' : 
+                                        percentage > 80 ? '#f8961e' : '#4cc9f0';
+                    
+                    return `
+                        <div class="budget-item hover-lift">
+                            <div class="budget-header">
+                                <div class="budget-title">
+                                    <div class="transaction-icon ${budget.category}" 
+                                         style="width: 40px; height: 40px; background: ${budget.color || '#4361ee'}">
+                                        <i class="${this.getCategoryIcon(budget.category)}"></i>
+                                    </div>
+                                    <div>
+                                        <h4>${this.getCategoryName(budget.category)}</h4>
+                                        <span class="text-muted">${budget.period || 'Monthly'} Budget</span>
+                                    </div>
+                                </div>
+                                <div class="budget-amount">$${budget.limit.toFixed(2)}</div>
+                            </div>
+                            
+                            <div class="budget-stats">
+                                <span>Spent: $${budget.spent.toFixed(2)}</span>
+                                <span>Remaining: $${(budget.limit - budget.spent).toFixed(2)}</span>
+                            </div>
+                            
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${Math.min(percentage, 100)}%; background: ${progressColor};"></div>
+                            </div>
+                            
+                            <div class="progress-label" style="color: ${progressColor};">
+                                ${percentage.toFixed(1)}% ${percentage > 100 ? '(Over Budget!)' : ''}
+                            </div>
+                            
+                            <div class="budget-actions mt-3 d-flex gap-2">
+                                <button class="btn-secondary" style="flex: 1;" 
+                                        onclick="editBudget(${budget.id})">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="btn-secondary" style="flex: 1;" 
+                                        onclick="deleteBudget(${budget.id})">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                // Update overview section
+                const overviewContainer = document.getElementById('budgets-overview');
+                if (overviewContainer) {
+                    const topBudgets = this.budgets.slice(0, 3);
+                    overviewContainer.innerHTML = topBudgets.map(budget => {
+                        const percentage = (budget.spent / budget.limit) * 100;
+                        return `
+                            <div class="budget-item">
+                                <div class="budget-header">
+                                    <h4>${this.getCategoryName(budget.category)}</h4>
+                                    <span>${percentage.toFixed(1)}%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${Math.min(percentage, 100)}%"></div>
+                                </div>
+                                <div class="budget-stats">
+                                    <span>$${budget.spent.toFixed(2)} / $${budget.limit.toFixed(2)}</span>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+            }
